@@ -1087,6 +1087,78 @@ a {
   .contact-card {
     min-width: 100%;
   }
+
+  /* Align cards to the center */
+  .service-cards,
+  .services-grid {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .service-card,
+  .service-card-2 {
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .service-card--small,
+  .service-card--large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+
+  /* Ensure all text is visible */
+  .card-content {
+    padding: 25px;
+    height: auto;
+    min-height: auto;
+    text-align: left;
+  }
+
+  .card-text {
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .services-container {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .services-header,
+  .services-description {
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .academic-excellence {
+    min-height: auto;
+    height: auto;
+  }
+
+  .service-card--small,
+  .service-card--large {
+    text-align: left;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 0.75rem;
+  }
 }
 
 /* Tablet Styles */
@@ -1324,9 +1396,74 @@ a {
   .services-header,
   .services-description,
   .card-content {
-    text-align: center;
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .service-card,
+  .service-card-2 {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+  }
+
+  .card-content {
+    height: auto;
+    min-height: auto;
+    padding: 25px;
+    text-align: left;
+  }
+
+  .card-text {
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .services-grid {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .service-cards {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .service-card-2 {
+    align-items: start;
+    text-align: left;
+    padding: auto;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .service-card--small,
+  .service-card--large {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  .academic-excellence {
+    min-height: auto;
+    height: auto;
   }
 }
 
