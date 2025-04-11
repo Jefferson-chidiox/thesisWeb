@@ -190,66 +190,41 @@ document.addEventListener('DOMContentLoaded', function () {
   updateSectionColor(); // Initial check
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all navigation links with the class "nav-link"
   const navLinks = document.querySelectorAll('.nav-link');
+  // Select all sections in the document
+  const sections = document.querySelectorAll('section');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+  // Function to set the active navigation link based on scroll position
+  const setActiveLink = () => {
+    // Initialize index to the number of sections
+    // This index will eventually point to the currently visible section
+    let index = sections.length;
 
-      if (targetElement) {
-        e.preventDefault();
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-});
+    // Loop backwards through sections until we find the section that's in view.
+    // The condition shifts the index down if the section's top is still below the current scroll position + 50 pixels.
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Get all sections that we need to track
-  const sections = {
-    home: document.querySelector('.hero-section'),
-    about: document.querySelector('#about'),
-    services: document.querySelector('#services'),
-    contact: document.querySelector('#contact')
+    // Remove the "active" class from all navigation links
+    navLinks.forEach((link) => link.classList.remove('active'));
+    // Add the "active" class to the navigation link corresponding to the active section
+    navLinks[index].classList.add('active');
   };
 
-  const navLinks = document.querySelectorAll('.nav-links .nav-link');
+  // Set the correct navigation link as active when the page loads
+  setActiveLink();
+  // Update the active link on scroll
+  window.addEventListener('scroll', setActiveLink);
 
-  function setActiveNav() {
-    const scrollPosition = window.scrollY + 100; // Offset for better trigger point
-
-    // Remove all active classes first
-    navLinks.forEach(link => link.classList.remove('active'));
-
-    // Find which section is currently in view
-    for (let [key, section] of Object.entries(sections)) {
-      if (!section) continue;
-      
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        // Find and activate corresponding nav link
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === '#' && key === 'home' || href?.includes(key)) {
-            link.classList.add('active');
-          }
-        });
-        break;
-      }
-    }
-  }
-
-  // Add scroll event listener
-  window.addEventListener('scroll', setActiveNav);
-  
-  // Initial check
-  setActiveNav();
+  // Add click event listeners to all navigation links for smooth scrolling behavior
+  navLinks.forEach((link, idx) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the default jump-to behavior of anchor links
+      // Scroll smoothly to the section corresponding to the clicked navigation link
+      sections[idx].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 });
 
 // Mobile Navigation Handler
