@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (footerRect.top <= windowHeight) {
       thesisServicesSection.style.backgroundColor = '#fef5f5';
     } else {
-      thesisServicesSection.style.backgroundColor = '';
+      thesisServicesSection.style.backgroundColor = '#f5f5f5';
     }
   }
 

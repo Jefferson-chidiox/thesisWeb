@@ -523,6 +523,10 @@ a {
 
 
   @media (max-width: 768px) {
+    .sidebar-footer {
+      display: none;
+    }
+
     .footer-container {
       flex-direction: column;
     }
