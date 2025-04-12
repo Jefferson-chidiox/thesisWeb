@@ -1,0 +1,113 @@
+/* Responsive adjustments for thesis services */
+  @media (min-width: 992px) {
+    .services-container { /* Using .services-container specific to this section */
+      grid-template-columns: 3fr 2fr; /* Two columns on desktop */
+      gap: 60px;
+      align-items: start; /* Align items at the top */
+    }
+    
+    .services-content { /* Add this class to the text/features block in HTML */
+      grid-column: 1;
+    }
+    
+    .service-cards {
+      grid-column: 2;
+      grid-row: 1 / span 2; /* Span across rows if content above is split */
+       position: sticky; /* Optional: make cards sticky */
+       top: 90px; /* Adjust top based on navbar height + desired space */
+    }
+  }
+  
+  @media (max-width: 768px) {
+   .thesis-services-section {
+      padding: 20px 15px;
+   }
+  
+   .services-container {
+      width: 100%;
+      padding: 0; /* Remove padding */
+      margin: 0;
+      gap: 20px;
+      max-width: 100%; /* Ensure container spans full width */
+    }
+  
+    .services-title {
+        font-size: 2rem;
+        text-align: left; /* Reinforce */
+    }
+     .services-description {
+        text-align: left; /* Reinforce */
+     }
+     
+      .services-subtitle {
+        font-size: 1.5rem;
+        text-align: left; /* Reinforce */
+    }
+    
+    .service-cards {
+        gap: 15px;
+        margin: 0; /* Reset margin */
+        padding: 0;
+        max-width: 100%;
+         top: 0; /* Reset positioning */
+         align-self: stretch; /* Take full grid width */
+    }
+    
+     .service-card {
+          padding: auto;
+          margin: 0; /* Align left within container */
+          max-width: 100%; /* Allow card to fill */
+           text-align: left;
+     }
+
+     .card-badge{
+      float: right; 
+     }
+  
+     /* If using specific small/large class names */
+     .service-card--small,
+     .service-card--large {
+          display: flex; /* Reset from previous mobile styles if necessary */
+          flex-direction: column;
+          align-items: flex-start; /* Align left */
+          text-align: left;
+          max-width: 100%; /* Allow full width */
+          margin: 0; /* Reset margin */
+     }
+
+     .sevices-grid{
+          display: grid; /* Use grid for layout */
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+          gap: 20px; /* Space between cards */
+          width: 100%; /* Full width on mobile */
+          margin: 0; /* Reset margin */
+     }
+     .service-card-2{
+          display: flex; /* Reset from previous mobile styles if necessary */
+          flex-direction: column;
+          align-items: flex-start; /* Align left */
+          text-align: left;
+          max-width: 100%; /* Allow full width on mobile */
+          margin: 0; /* Reset margin */
+     }
+     .card-content {
+          padding: 20px; /* Adjust padding */
+           height: auto;
+           min-height: auto;
+           text-align: left;
+     }
+     
+      .card-text {
+         overflow: visible;
+         text-overflow: unset;
+         white-space: normal;
+         display: block;
+         width: 100%;
+         text-align: left;
+     }
+     
+      .academic-excellence {
+         min-height: auto;
+         height: auto;
+     }
+  }

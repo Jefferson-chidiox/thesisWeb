@@ -1,0 +1,26 @@
+  /* Generic Container (Centered) */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+      margin: 0 auto; /* Note: Use this class ONLY if centering is desired */
+    }
+  }
+  
+  /* Large Screen Optimizations for Container */
+  @media (min-width: 1600px) {
+    .container { /* Override default .container for very large screens if needed */
+      max-width: 1440px;
+       /* Keep margin: auto if centered behavior desired for .container */
+    }
+  }
+  
+  
+  /* Responsive Layout Adjustments */
+  @media (max-width: 992px) {
+    .main-content {
+      flex-direction: column; /* Stack content below sidebar */
+      padding-left: 0; /* Remove padding when sidebar might be full-width */
+    }
+  }
+  
+  /* Note: The hero-section.full-width rule needs context - if it relates ONLY to hero, keep it in hero.css. If it affects main layout based on sidebar state, it might stay here or in sidebar.css */

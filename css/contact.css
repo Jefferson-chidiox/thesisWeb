@@ -1,0 +1,53 @@
+/* Responsive Contact Section */
+  @media (max-width: 768px) {
+    .contact-section {
+      flex-direction: column; /* Stack cards */
+      padding: 20px 15px; /* Consistent padding */
+      margin-top: 40px;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+  
+    .contact-card {
+      width: 100%; /* Make cards full width */
+      min-width: 300px; /* Minimum width to prevent squishing */
+      margin-bottom: 1.5rem; /* Space between stacked cards */
+      overflow-x: auto; /* Enable horizontal scrolling within cards */
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .contact-card .info-content,
+    .contact-card .hours-row {
+      white-space: normal; /* Allow these elements to wrap */
+    }
+  
+    .contact-card:last-child {
+      margin-bottom: 0;
+    }
+  
+    .form-row {
+      flex-direction: column; /* Stack form elements */
+      gap: 0; /* Reset gap, use margin on form-group */
+      margin-bottom: 0;
+    }
+  
+    .form-group {
+      width: 100%;
+      min-width: auto; /* Reset min-width */
+      margin-bottom: 1rem; /* Add space between stacked groups */
+    }
+  
+    .form-control {
+      /* Inherits width 100% */
+    }
+     
+    .hours-row {
+      justify-content: flex-start; /* Align left on mobile */
+      gap: 10px; /* Add gap for clarity */
+    }
+     
+    .send-button {
+      width: 100%; /* Make button full width */
+      justify-content: center; /* Center text/icon */
+    }
+  }

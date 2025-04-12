@@ -397,6 +397,7 @@ a {
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   position: relative;
+  text-align: left;
 }
 
 .card-badge {
@@ -525,6 +526,7 @@ a {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eaeaea;
+    text-align: left;
   }
   
   .service-card-2:hover {
@@ -905,6 +907,10 @@ a {
 
 
   @media (max-width: 768px) {
+
+    h1, h2, h3, h4, h5, h6 {
+      text-align: left;
+    }
     .footer-container {
       flex-direction: column;
     }
@@ -912,7 +918,7 @@ a {
     .footer-bottom {
       flex-direction: column;
       align-items: center;
-      text-align: center;
+      text-align: left;
     }
     
     .footer-policies {
@@ -984,7 +990,10 @@ a {
   }
   
   .hero-buttons {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
   }
   
@@ -1053,13 +1062,13 @@ a {
   .nav-links .nav-link {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding: 10px 0;
   }
 
   .get-started-btn {
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin: 10px 0 0 0;
   }
 
@@ -1103,7 +1112,7 @@ a {
     margin: 0 auto 20px;
     width: 100%;
     max-width: 400px;
-    text-align: center;
+    text-align: left;
   }
 
   .service-card--small,
@@ -1233,6 +1242,7 @@ a {
   *{
     overflow-x: hidden;
   }
+
   .thesis-services-section {
     padding: 20px 15px;
   }
@@ -1308,9 +1318,9 @@ a {
 
   .primary-btn,
   .secondary-btn {
-    width: 100%;
+    width: 50%;
     margin: 5px 0;
-    text-align: center;
+    text-align: left;
   }
 
   /* Stats container */
@@ -1322,7 +1332,7 @@ a {
 
   .stat-item {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   /* Hero section alignment */

@@ -1,0 +1,118 @@
+
+  
+  /* Responsive Hero Adjustments */
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    /* Adjust layout behavior if needed when sidebar changes */
+    .hero-section.full-width {
+        margin-left: 0; 
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+      .hero-section {
+          padding: 20px 15px;
+          min-height: auto; /* Allow height to shrink */
+           text-align: left; /* Reinforce */
+           align-items: flex-start; /* Reinforce */
+      }
+      
+     .hero-content {
+        max-width: 100%; /* Allow content to use full width */
+         padding: 0; /* Remove conflicting padding */
+     }
+      
+    .hero-title {
+      font-size: clamp(2rem, 7vw, 2.5rem); /* Responsive font size */
+    }
+  
+    .hero-text {
+      font-size: clamp(1rem, 4vw, 1.1rem); /* Responsive font size */
+    }
+  
+    .hero-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: flex-start; /* Align stacked buttons left */
+      gap: 10px;
+      width: 100%; /* Take full width */
+    }
+  
+    .primary-btn,
+    .secondary-btn {
+      width: auto; /* Adjust width - maybe fit-content or a specific max-width? */
+      /* width: 100%; max-width: 280px; */ /* Example: Full width up to a limit */
+      margin: 5px 0; 
+      padding: 10px 20px; /* Slightly smaller padding */
+       text-align: center; /* Keep text centered inside button */
+    }
+    
+     .stats-container {
+       flex-direction: column; /* Stack stats */
+       gap: 20px;
+       align-items: flex-start; /* Align items left */
+        max-width: 100%; /* Allow full width */
+     }
+  
+     .stat-item {
+         width: 100%; /* Take full width when stacked */
+         min-width: auto; /* Reset min-width */
+          text-align: left;
+     }
+  }
+  
+  
+  /* Height-based Media Queries */
+  @media (max-height: 700px) {
+    .hero-section {
+      /* Removed min-height adjust, let flex-grow handle it */
+       padding-top: 20px; 
+       padding-bottom: 20px; 
+    }
+  
+    .stats-container {
+      margin-top: 20px;
+    }
+  }
+  
+  /* Landscape Mobile */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+      padding: 20px;
+      min-height: auto; /* Ensure content doesn't get cut off */
+    }
+    
+    .hero-content {
+       max-width: 100%;
+    }
+  
+    .hero-title {
+        font-size: 2rem; /* Smaller title */
+        margin-bottom: 15px;
+    }
+     .hero-text {
+        font-size: 0.9rem; /* Smaller text */
+        margin-bottom: 20px;
+    }
+     .hero-buttons {
+        margin-bottom: 20px;
+        flex-direction: row; /* Keep side-by-side if space */
+        gap: 15px;
+     }
+     
+    .stats-container {
+        display: flex; /* Maybe back to flex row? */
+        flex-direction: row; 
+        gap: 20px;
+    }
+     .stat-item {
+         text-align: left;
+         font-size: 0.9rem;
+     }
+      .stat-number {
+        font-size: 1.8rem;
+      }
+  }

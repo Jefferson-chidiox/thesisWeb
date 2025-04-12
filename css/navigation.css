@@ -1,0 +1,61 @@
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0 15px;
+    }
+  
+    .menu-button {
+        display: flex; /* Show hamburger menu */
+    }
+  
+    .nav-links {
+      position: fixed; /* Take out of flow for dropdown */
+      top: 70px; /* Below navbar */
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 20px;
+      flex-direction: column;
+      align-items: flex-start; /* Align links left in dropdown */
+      gap: 15px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 98; /* Below navbar but above content */
+      border-bottom: 1px solid #f0f0f0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Add shadow for better separation */
+    }
+  
+    .nav-links.active { /* Class added by JS to show menu */
+      transform: translateX(0);
+    }
+  
+    /* Hide desktop links by default on mobile */
+    .nav-links .nav-link:not(.get-started-btn) { 
+        display: none; 
+    }
+    
+     /* Show links when menu is active */
+    .nav-links.active .nav-link {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 0;
+      margin: 0; /* Reset margin for stacked links */
+    }
+    
+    /* Keep get started hidden initially unless also in mobile menu */
+    .nav-links .get-started-btn {
+        display: none; 
+    }
+  
+    .nav-links.active .get-started-btn {
+        display: block; /* Show Get Started button inside the mobile menu */
+        width: 100%;
+        text-align: center; /* Center text in button */
+        margin: 10px 0 0 0; /* Reset margin */
+    }
+    
+    /* Alternative: If "Get Started" is ALWAYS visible separate from dropdown links */
+    /* .nav-links { display: none; } /* Hide the container initially */
+    /* .get-started-btn { display: block; } /* Ensure button is visible if needed */
+  }

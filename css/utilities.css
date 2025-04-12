@@ -1,0 +1,22 @@
+
+  /* Responsive Utilities */
+  @media (max-width: 768px) {
+      .consultation-container {
+          padding: 0 15px; /* Match mobile section padding */
+           margin-top: 40px; /* Adjust spacing */
+      }
+      .consultation-button {
+           width: 100%; /* Full width button on mobile */
+           padding: 14px 20px; /* Adjust padding */
+      }
+      
+       .scroll-top {
+        bottom: 20px;
+        right: 20px; /* Adjust position */
+      }
+      
+      .scroll-top-button {
+        width: 45px;
+        height: 45px; /* Slightly smaller */
+      }
+  }

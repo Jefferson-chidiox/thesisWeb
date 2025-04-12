@@ -1,0 +1,12 @@
+
+/* General heading responsiveness - Left align on mobile */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+  }
+  
+  /* Hide horizontal overflow globally on small screens */
+   /* body{
+     overflow-x: hidden;
+   } */
+}

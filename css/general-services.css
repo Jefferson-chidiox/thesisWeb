@@ -1,0 +1,58 @@
+
+  /* Responsive General Services */
+  @media (max-width: 992px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns tablet */
+    }
+  }
+  
+  @media (max-width: 768px) {
+      .services-section {
+        padding: 20px 15px; /* Consistent padding */
+        margin-top: 40px;
+     }
+  
+    .services-grid {
+      grid-template-columns: 1fr; /* 1 column mobile */
+      gap: 15px;
+      margin-top: 30px; /* Reduce space */
+       width: 100%;
+       max-width: 500px; /* Centered look alignment */
+       margin-left: 0; /* Keep grid itself left aligned */
+       margin-right: 0;
+       padding: 0; /* Reset padding */
+    }
+  
+    /* Reuse shared mobile styles if possible, otherwise specify */
+     .services-section .services-title {
+      font-size: 28px; /* Adjust size */
+      text-align: left; /* Reinforce */
+      max-width: 100%;
+    }
+     .services-section .services-description {
+      font-size: 16px; /* Adjust size */
+       text-align: left; /* Reinforce */
+        max-width: 100%;
+    }
+  
+    .service-card-2 {
+      padding: 20px; /* Adjust padding */
+       width: 100%; /* Take full width */
+       margin: 0; /* Reset margin, handled by grid gap */
+       max-width: 100%; /* Use grid max-width for control */
+       align-items: flex-start; /* Align left */
+       text-align: left; /* Align left */
+    }
+    
+    /* Make sure text inside is also aligned left */
+     .service-card-2 h3,
+     .service-card-2 p {
+         text-align: left;
+     }
+  
+      /* If aligning grid container centrally on mobile but content left */
+     .services-grid {
+       /* margin: 0 auto; /* If grid should center */
+       margin-left: 0; /* Override for left align */
+     }
+  }
