@@ -63,7 +63,6 @@ window.addEventListener('load', checkWidth);
 // Check on window resize
 window.addEventListener('resize', checkWidth);
 
-
 document.addEventListener('DOMContentLoaded', function() {
   // Scroll to top functionality
   const scrollTopButton = document.querySelector('.scroll-top-button');
@@ -190,8 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
   updateSectionColor(); // Initial check
 });
 
-
-
 // Mobile Navigation Handler
 document.addEventListener('DOMContentLoaded', function() {
   const menuButton = document.getElementById('sidebarToggle');
@@ -221,4 +218,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('resize', handleResize);
   handleResize(); // Initial check
+});
+
+// Add scroll detection for contact cards
+document.addEventListener('DOMContentLoaded', function() {
+  const contactCards = document.querySelectorAll('.contact-card');
+  
+  contactCards.forEach(card => {
+    if (card.scrollWidth > card.clientWidth) {
+      card.classList.add('is-scrollable');
+    }
+    
+    // Hide indicator when user has scrolled
+    card.addEventListener('scroll', () => {
+      if (card.scrollLeft > 0) {
+        card.classList.remove('is-scrollable');
+      }
+    }, { passive: true });
+  });
+});
+
+// Handle scroll indicators
+document.addEventListener('DOMContentLoaded', function() {
+  const contactCards = document.querySelectorAll('.contact-card');
+  const servicesGrid = document.querySelector('.services-grid');
+
+  // Contact cards scroll detection
+  contactCards.forEach(card => {
+    card.addEventListener('scroll', () => {
+      if (card.scrollLeft > 20) {
+        card.classList.add('scrolled');
+      } else {
+        card.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  });
+
+  // Services grid scroll detection
+  if (servicesGrid) {
+    servicesGrid.addEventListener('scroll', () => {
+      if (servicesGrid.scrollLeft > 20) {
+        servicesGrid.classList.add('scrolled');
+      } else {
+        servicesGrid.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 });

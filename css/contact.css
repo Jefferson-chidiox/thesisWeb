@@ -14,6 +14,28 @@
       margin-bottom: 1.5rem; /* Space between stacked cards */
       overflow-x: auto; /* Enable horizontal scrolling within cards */
       white-space: nowrap; /* Prevent text wrapping */
+      position: relative;
+    }
+
+    .contact-card::after {
+      content: 'Scroll >>>';
+      position: sticky;
+      bottom: 15px;
+      right: 20px;
+      width: auto;
+      background: linear-gradient(90deg, transparent, #fff 30%);
+      padding: 8px 16px;
+      color: #e32929;
+      font-weight: 500;
+      animation: scrollHint 1.5s ease-in-out infinite;
+      pointer-events: none;
+      text-align: left;
+      margin-left: auto;
+      display: block;
+    }
+
+    .contact-card.scrolled::after {
+      display: none;
     }
 
     .contact-card .info-content,
@@ -51,3 +73,14 @@
       justify-content: center; /* Center text/icon */
     }
   }
+
+@keyframes scrollHint {
+  0%, 100% { 
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}

@@ -1,5 +1,4 @@
-
-  /* Responsive General Services */
+/* Responsive General Services */
   @media (max-width: 992px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr); /* 2 columns tablet */
@@ -13,14 +12,18 @@
      }
   
     .services-grid {
-      grid-template-columns: 1fr; /* 1 column mobile */
-      gap: 15px;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding: 16px;
+      -webkit-overflow-scrolling: touch;
       margin-top: 30px; /* Reduce space */
-       width: 100%;
-       max-width: 500px; /* Centered look alignment */
-       margin-left: 0; /* Keep grid itself left aligned */
-       margin-right: 0;
-       padding: 0; /* Reset padding */
+      width: 100%;
+      max-width: 500px; /* Centered look alignment */
+      margin-left: 0; /* Keep grid itself left aligned */
+      margin-right: 0;
+      position: relative;
     }
   
     /* Reuse shared mobile styles if possible, otherwise specify */
@@ -37,11 +40,16 @@
   
     .service-card-2 {
       padding: 20px; /* Adjust padding */
-       width: 100%; /* Take full width */
-       margin: 0; /* Reset margin, handled by grid gap */
-       max-width: 100%; /* Use grid max-width for control */
-       align-items: flex-start; /* Align left */
-       text-align: left; /* Align left */
+      width: 100%; /* Take full width */
+      margin: 0; /* Reset margin, handled by grid gap */
+      max-width: 100%; /* Use grid max-width for control */
+      align-items: flex-start; /* Align left */
+      text-align: left; /* Align left */
+      min-width: 280px;
+      scroll-snap-align: start;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     
     /* Make sure text inside is also aligned left */
@@ -55,4 +63,34 @@
        /* margin: 0 auto; /* If grid should center */
        margin-left: 0; /* Override for left align */
      }
+
+    /* Add scroll indicators */
+    .services-grid::after {
+      content: 'Scroll >>>';
+      position: absolute;
+      right: 20px;
+      bottom: -30px;
+      background: linear-gradient(90deg, transparent, #fff 30%);
+      padding: 8px 16px;
+      color: #e32929;
+      font-weight: 500;
+      animation: scrollHint 1.5s ease-in-out infinite;
+      pointer-events: none;
+    }
   }
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes scrollHint {
+  0%, 100% { 
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
